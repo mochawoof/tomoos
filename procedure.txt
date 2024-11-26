@@ -17,6 +17,9 @@ sudo apt install libx11-dev build-essential
 Install firefox:
 sudo apt install firefox-esr
 
+Get disk usage:
+df -H
+
 To build:
 gcc -c test.cpp
 gcc test.o -o test.out -lX11
