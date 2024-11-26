@@ -20,10 +20,12 @@ sudo apt install firefox-esr
 Get disk usage:
 df -H
 
-To build:
+To build without makefile:
 gcc -c test.cpp
 gcc test.o -o test.out -lX11
 
 To clean:
-rm *.o
-rm *.out
+rm *.o *.out
+
+Install clock updater:
+sudo apt install chrony
