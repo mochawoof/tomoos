@@ -1,0 +1,26 @@
+TomoOS is based on Debian standard.
+
+After installation:
+su
+usermod -aG sudo username
+
+If you're on Virtualbox:
+sudo adduser username vboxsf
+
+Installing xorg:
+sudo apt update &&
+sudo apt install xorg xinit xterm
+
+Install libx11 & gcc:
+sudo apt install libx11-dev build-essential
+
+Install firefox:
+sudo apt install firefox-esr
+
+To build:
+gcc -c test.cpp
+gcc test.o -o test.out -lX11
+
+To clean:
+rm *.o
+rm *.out
