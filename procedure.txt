@@ -14,8 +14,8 @@ sudo apt install xorg xinit xterm
 Install libx11 & gcc:
 sudo apt install libx11-dev build-essential
 
-Install firefox:
-sudo apt install firefox-esr
+Install fun stuff (Firefox/media players):
+sudo apt install firefox-esr mpv
 
 Get disk usage:
 df -H

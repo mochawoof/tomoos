@@ -35,6 +35,8 @@ int main(void) {
     Cursor cursor = XCreateFontCursor(dp, XC_left_ptr);
     XDefineCursor(dp, root, cursor);
     XGrabButton(dp, Button1, 0, root, 0, ButtonPressMask, GrabModeSync, GrabModeAsync, NULL, NULL);
+    XGrabButton(dp, Button2, 0, root, 0, ButtonPressMask, GrabModeSync, GrabModeAsync, NULL, NULL);
+    XGrabButton(dp, Button3, 0, root, 0, ButtonPressMask, GrabModeSync, GrabModeAsync, NULL, NULL);
     XSync(dp, False);
 
     // Keyboard stuff
@@ -46,19 +48,22 @@ int main(void) {
         XNextEvent(dp, &e);
         switch (e.type) {
             default: {
-                puts("Unknown event");
+                //puts("Unknown event");
                 break;
             }
             case ButtonPress: {
+                int type = e.xkey.type;
+                int state = e.xkey.state;
+
                 // Prevent X from freezing
                 XAllowEvents(dp, ReplayPointer, CurrentTime);
                 XSync(dp, 0);
-
-                puts("Mouse");
                 break;
             }
             case KeyPress: {
-                puts("Big W");
+                char* key = XKeysymToString(XKeycodeToKeysym(dp, e.xkey.keycode, 0));
+                int mod = e.xkey.state;
+
                 break;
             }
         }
