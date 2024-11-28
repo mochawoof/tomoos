@@ -7,12 +7,8 @@ usermod -aG sudo username
 If you're on Virtualbox:
 sudo adduser username vboxsf
 
-Installing xorg:
-sudo apt update &&
-sudo apt install xorg xinit xterm
-
-Install libx11 & gcc:
-sudo apt install libx11-dev build-essential
+Install Wayland:
+sudo apt install weston xwayland waycheck
 
 Install fun stuff (Firefox/media players):
 sudo apt install firefox-esr mpv
