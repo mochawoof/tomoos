@@ -2,19 +2,16 @@ TomoOS is based on Debian standard.
 
 After installation:
 su
-usermod -aG sudo username
+/sbin/usermod -aG sudo username
 
 If you're on Virtualbox:
 sudo adduser username vboxsf
 
-Install Wayland:
-sudo apt install weston xwayland waycheck
-
-Install fun stuff (Firefox/media players):
-sudo apt install firefox-esr mpv
-
 Get disk usage:
 df -H
+
+Install Wayland:
+sudo apt install libwayland
 
 To build without makefile:
 gcc -c test.cpp
